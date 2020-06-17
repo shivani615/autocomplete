@@ -1,0 +1,42 @@
+<!DOCTYPE html><html lang="en">
+ <head>	
+  <meta charset="UTF-8">	
+    <title>Shipping and Billing</title>	
+<script>
+function billingFunction(){
+
+	if(document.querySelector("#same").checked)
+	{
+		var name=document.querySelector("#shippingName").value;   //this will copy the value entered by the user in shipping name block
+		var zip=document.querySelector("#shippingZip").value;     //this will copy the value entered by the user in shipping zip block
+
+		document.querySelector("#billingName").value=name;   //finally these lines will copy the above initialised variables to the billing address and billing zip
+		document.querySelector("#billingZip").value=zip;
+	}
+
+	else
+	{
+		document.querySelector("#billingName").value="";
+		document.querySelector("#billingZip").value="";
+	}
+}
+</script>
+    <style>		
+        input{			
+          border:1px solid black;
+	}		
+        input:focus{
+	   background-color: #E6E6E6;		
+        }
+	fieldset{
+ 	   margin-bottom: 4%;
+	}	
+    </style>
+  </head>
+  <body>
+	<h1>JavaScript Homework</h1>	
+        <p>Add the JavaScript code needed to enable auto-complete on this form.  Whenever the checkbox is checked, the code should automatically copy the values from Shipping Name and Shipping Zip into the Billing Name and Billing Zip.  If the checkbox is unchecked, the Billing Name and Billing Zip should go blank.</p>
+
+		<form>		
+        <fieldset>
+	  <legend>Shipping Information</legend>			  <label for ="shippingName">Name:</label>		  <input type = "text" name = "Name" id = "shippingName" required><br/>
